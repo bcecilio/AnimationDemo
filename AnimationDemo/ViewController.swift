@@ -6,15 +6,10 @@
 //  Copyright © 2019 Brendon Cecilio. All rights reserved.
 //
 
-import UIKit
+import SwiftUI
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-
+    
+    
 }
 
