@@ -67,7 +67,7 @@
                     <connections>
                         <outlet property="author" destination="DUZ-VE-zI7" id="E2e-xk-Yxm"/>
                         <outlet property="cursorImage" destination="t17-ew-ze8" id="WYm-b0-kVu"/>
-                        <outlet property="getEnlightenedButton" destination="2Oa-jV-FFc" id="r1e-Dv-fFy"/>
+                        <outlet property="getQuoteButton" destination="2Oa-jV-FFc" id="r1e-Dv-fFy"/>
                         <outlet property="quoteView" destination="KWc-hu-6Y5" id="h0F-Le-dqS"/>
                         <outlet property="yellowView" destination="eI0-s2-8IJ" id="YRf-6h-hP0"/>
                     </connections>

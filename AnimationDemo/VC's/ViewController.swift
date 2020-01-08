@@ -12,18 +12,22 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var quoteView: UITextView!
     @IBOutlet weak var author: UILabel!
-    @IBOutlet weak var getEnlightenedButton: UIButton!
+    @IBOutlet weak var getQuoteButton: UIButton!
     @IBOutlet weak var yellowView: UIView!
     @IBOutlet weak var cursorImage: UIImageView!
     
     var quote = [Quote]()
     
+    var currentAnimation = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        getEnlightenedButton.layer.cornerRadius = 9
+        getQuoteButton.layer.cornerRadius = 9
         view.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
         quoteView.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
         yellowView.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+        
+        quoteView.text = "Press the Button to get a funny joke and find out who wrote it!"
     }
     
 //    func animateCursor() {
@@ -34,8 +38,7 @@ class ViewController: UIViewController {
     
     @IBAction func getQuoteButton(_ sender: UIButton) {
         
-        quoteView.transform = CGAffineTransform(scaleX: 2, y: 2)
-        quoteView.transform = .identity
+        UIView.animate(withDuration: <#T##TimeInterval#>, delay: <#T##TimeInterval#>, usingSpringWithDamping: <#T##CGFloat#>, initialSpringVelocity: <#T##CGFloat#>, options: <#T##UIView.AnimationOptions#>, animations: <#T##() -> Void#>, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
         
         QuoteAPI.fetchQuote { [weak self] (result) in
             switch result {
@@ -47,16 +50,17 @@ class ViewController: UIViewController {
                 DispatchQueue.main.async {
                     self?.quoteView.text = randomQuote.quote
                     self?.author.text = " - \(randomQuote.author )"
-                    UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
-                        self?.quoteView.transform = CGAffineTransform(scaleX: -30, y: 0)
-                        
-                    }) { (_) in
-                        
-                        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
-                            self?.quoteView.alpha = 0
-                            self?.quoteView.transform = (self?.quoteView.transform.translatedBy(x: 0, y: -200))!
-                        }, completion: nil)
-                    }
+                    
+//                    UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+//                        self?.quoteView.transform = CGAffineTransform(scaleX: -30, y: 0)
+//
+//                    }) { (_) in
+//
+//                        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+//                            self?.quoteView.alpha = 0
+//                            self?.quoteView.transform = (self?.quoteView.transform.translatedBy(x: 0, y: -200))!
+//                        }, completion: nil)
+//                    }
                 }
             }
         }
