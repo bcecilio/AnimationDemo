@@ -47,6 +47,16 @@ class ViewController: UIViewController {
                 DispatchQueue.main.async {
                     self?.quoteView.text = randomQuote.quote
                     self?.author.text = " - \(randomQuote.author )"
+                    UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+                        self?.quoteView.transform = CGAffineTransform(scaleX: -30, y: 0)
+                        
+                    }) { (_) in
+                        
+                        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+                            self?.quoteView.alpha = 0
+                            self?.quoteView.transform = (self?.quoteView.transform.translatedBy(x: 0, y: -200))!
+                        }, completion: nil)
+                    }
                 }
             }
         }
