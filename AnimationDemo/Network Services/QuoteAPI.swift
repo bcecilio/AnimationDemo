@@ -11,7 +11,7 @@ import Foundation
 struct QuoteAPI {
     static func fetchQuote(completion: @escaping (Result<Quote,AppError>) -> ()) {
         
-        let endpointURL = "https://ron-swanson-quotes.herokuapp.com/v2/quotes"
+        let endpointURL = "http://quotes.stormconsultancy.co.uk/random.json"
         
         guard let url = URL(string: endpointURL) else {
             completion(.failure(.badURL(endpointURL)))

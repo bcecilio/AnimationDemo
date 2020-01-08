@@ -8,4 +8,9 @@
 
 import Foundation
 
-typealias Quote = [String]
+struct Quote: Codable {
+    let author: String
+    let id: Int
+    let quote: String
+    let permalink: String
+}
