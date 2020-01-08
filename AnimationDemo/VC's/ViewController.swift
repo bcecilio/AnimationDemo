@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var directionLabel: UILabel!
+    @IBOutlet weak var quoteView: UITextView!
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var ronImage: UIImage!
     @IBOutlet weak var getEnlightenedButton: UIButton!
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
                 }
             case .success(let randomQuote):
                 DispatchQueue.main.async {
-                    self?.directionLabel.text = randomQuote.quote
+                    self?.quoteView.text = randomQuote.quote
                     self?.author.text = " - \(randomQuote.author )"
                 }
             }
