@@ -2,7 +2,7 @@
 I started this demo to learn the built-in animation methods in UIKit. 
 
 ![home screen](Assests/homescreen.png)
-![secondary screen](Assests/secondarypage.png)
+![secondary screen](Assests/secondaryscreen.png)
 
 ## Snippet
 Here is a snippet of some code I created to animate the imageViews I used in the secondary screen.
