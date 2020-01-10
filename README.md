@@ -7,7 +7,7 @@ I started this demo to learn the built-in animation methods in UIKit.
 ## Snippet
 Here is a snippet of some code I created to animate the imageViews I used in the secondary screen.
 
-'''swift
+```swift
 ronImage1.isUserInteractionEnabled = true
 
 let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PulseController.addPulse))
@@ -21,7 +21,7 @@ let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selecto
         
         self.view.layer.insertSublayer(pulse, below: ronImage1.layer)
     }
-'''
+```
 
 ## GIF
 
